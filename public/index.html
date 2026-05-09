@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Turnos Médicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Sistema de Turnos Médicos</h1>
+        <p class="subtitulo">TP3 - Node.js, Express, PostgreSQL y JWT</p>
+
+        <section class="card">
+            <h2>Registro de usuario</h2>
+            <input id="regNombre" placeholder="Nombre completo">
+            <input id="regEmail" placeholder="Email">
+            <input id="regPassword" type="password" placeholder="Contraseña">
+            <button onclick="registrar()">Registrarse</button>
+        </section>
+
+        <section class="card">
+            <h2>Iniciar sesión</h2>
+            <input id="loginEmail" placeholder="Email">
+            <input id="loginPassword" type="password" placeholder="Contraseña">
+            <button onclick="login()">Login</button>
+        </section>
+
+        <section class="card">
+            <h2>Ruta protegida</h2>
+            <p>Esta prueba usa el token JWT guardado en el navegador.</p>
+            <button onclick="probarPrivado()">Probar acceso</button>
+        </section>
+
+        <section class="resultado">
+            <h2>Respuesta del servidor</h2>
+            <pre id="resultado">Aquí aparecerán las respuestas...</pre>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
