@@ -2,41 +2,93 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Turnos Médicos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <header class="header">
+        <div>
+            <h1>Sistema de Turnos Médicos</h1>
+            <p>TP3 - Programación III | Node.js + Express + PostgreSQL</p>
+        </div>
+    </header>
+
     <main class="contenedor">
-        <h1>Sistema de Turnos Médicos</h1>
-        <p class="subtitulo">TP3 - Node.js, Express, PostgreSQL y JWT</p>
 
-        <section class="card">
-            <h2>Registro de usuario</h2>
-            <input id="regNombre" placeholder="Nombre completo">
-            <input id="regEmail" placeholder="Email">
-            <input id="regPassword" type="password" placeholder="Contraseña">
-            <button onclick="registrar()">Registrarse</button>
+        <section class="intro">
+            <h2>Panel de usuario</h2>
+            <p>
+                Desde esta página podés registrar un usuario, iniciar sesión y comprobar
+                el acceso a una ruta protegida mediante JWT.
+            </p>
         </section>
 
-        <section class="card">
-            <h2>Iniciar sesión</h2>
-            <input id="loginEmail" placeholder="Email">
-            <input id="loginPassword" type="password" placeholder="Contraseña">
-            <button onclick="login()">Login</button>
-        </section>
+        <div class="grid">
 
-        <section class="card">
-            <h2>Ruta protegida</h2>
-            <p>Esta prueba usa el token JWT guardado en el navegador.</p>
-            <button onclick="probarPrivado()">Probar acceso</button>
-        </section>
+            <section class="card">
+                <h2>Crear cuenta</h2>
+                <p class="texto">Registrá un nuevo usuario en el sistema.</p>
+
+                <label>Nombre completo</label>
+                <input id="regNombre" placeholder="Ej: Lukas Salgado">
+
+                <label>Email</label>
+                <input id="regEmail" placeholder="Ej: lukas@gmail.com">
+
+                <label>Contraseña</label>
+                <input id="regPassword" type="password" placeholder="Mínimo 6 caracteres">
+
+                <button onclick="registrar()">Registrar usuario</button>
+            </section>
+
+            <section class="card">
+                <h2>Iniciar sesión</h2>
+                <p class="texto">Ingresá con el usuario registrado para obtener un token JWT.</p>
+
+                <label>Email</label>
+                <input id="loginEmail" placeholder="Ej: lukas@gmail.com">
+
+                <label>Contraseña</label>
+                <input id="loginPassword" type="password" placeholder="Tu contraseña">
+
+                <button onclick="login()">Iniciar sesión</button>
+            </section>
+
+            <section class="card">
+                <h2>Ruta protegida</h2>
+                <p class="texto">
+                    Esta opción verifica si el token guardado en el navegador permite acceder
+                    a una ruta privada del backend.
+                </p>
+
+                <button onclick="probarPrivado()">Probar acceso privado</button>
+                <button class="secundario" onclick="cerrarSesion()">Cerrar sesión</button>
+            </section>
+
+            <section class="card">
+                <h2>Estado del sistema</h2>
+                <ul class="lista">
+                    <li>Backend: Node.js + Express</li>
+                    <li>Base de datos: PostgreSQL</li>
+                    <li>Autenticación: JWT</li>
+                    <li>Frontend: HTML, CSS y JavaScript</li>
+                </ul>
+            </section>
+
+        </div>
 
         <section class="resultado">
             <h2>Respuesta del servidor</h2>
-            <pre id="resultado">Aquí aparecerán las respuestas...</pre>
+            <pre id="resultado">Todavía no se realizó ninguna acción.</pre>
         </section>
+
     </main>
+
+    <footer>
+        <p>Trabajo Práctico N°3 - Sistema de Turnos Médicos</p>
+    </footer>
 
     <script src="app.js"></script>
 </body>
